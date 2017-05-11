@@ -7,5 +7,4 @@ public class AddressToken {
 
 	private String streetName;
 	private String number;
-	private String country;
 }

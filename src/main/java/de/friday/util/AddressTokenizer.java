@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import de.friday.domain.AddressToken;
 import de.friday.domain.CountryFormat;
+import de.friday.util.parser.ARAddressParser;
 import de.friday.util.parser.DEAddressParser;
 import de.friday.util.parser.ESAddressParser;
 import de.friday.util.parser.FRAddressParser;
@@ -33,6 +34,7 @@ public class AddressTokenizer {
 		boolean endsWithNumeric = Character.isDigit(tokens[tokens.length - 1].charAt(0));
 		boolean endsWithLetter = Character.isLetter(tokens[tokens.length - 1].charAt(0));
 		boolean streetNameEndsWithComma = tokens[tokens.length - 2].trim().contains(",");
+		boolean numberHasPrefix = tokens[tokens.length - 2].trim().equals("No");
 
 		if (startsWithNumberAndComma) {
 			format.setCountry("FR");
@@ -40,12 +42,15 @@ public class AddressTokenizer {
 		} else if (startsWithNumberAndNoComma) {
 			format.setCountry("US");
 			format.setTokenizer(USAddressParser.class);
-		} else if ((endsWithNumeric && !streetNameEndsWithComma) || endsWithLetter) {
+		} else if ((endsWithNumeric && !streetNameEndsWithComma && !numberHasPrefix) || endsWithLetter) {
 			format.setCountry("DE");
 			format.setTokenizer(DEAddressParser.class);
 		} else if (streetNameEndsWithComma) {
 			format.setCountry("ES");
 			format.setTokenizer(ESAddressParser.class);
+		} else if (numberHasPrefix) {
+			format.setCountry("AR");
+			format.setTokenizer(ARAddressParser.class);
 		}
 
 		return format;

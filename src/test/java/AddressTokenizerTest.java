@@ -85,4 +85,12 @@ public class AddressTokenizerTest {
 		assertEquals(token.getStreetName(), "Calle Aduana");
 	}
 	
+	@Test
+	public void testSimpleAddressLineAR() {
+		String input = "Calle 39 No 1540";
+		AddressToken token = addressTokenizer.parse(input);
+		assertEquals(token.getNumber(), "No 1540");
+		assertEquals(token.getStreetName(), "Calle 39");
+	}
+	
 }

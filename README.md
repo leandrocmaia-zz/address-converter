@@ -1,0 +1,48 @@
+# heybreach-backend
+
+## Requirements
+
++ Java 8
+
+## How to run
+
+Run: ```./gradlew clean build; java -jar build/libs/heybreach-backend-0.0.1-SNAPSHOT.jar```
+
+## Tasks
+
+1. Design a SQL & NoSql schema for this platform, which takes all uses cases into account.
+
+[Click here](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=database%20diagram#R7VzbcqM4EP0aPyYFCGP8GOcyM1UzNanJbu3sowwy1g4gVsixPV%2B%2FEoiLBDiOg4njtR8SaEm0aLVOH7Vkj8BttPlEYbL8RnwUjizD34zA3ciyJlOD%2FxWCbS5wLTcXBBT7ucisBE%2F4N5JC2S5YYR%2BlSkVGSMhwogo9EsfIY4oMUkrWarUFCVWtCQykRqMSPHkwRI1qf2GfLYu3cCr5Z4SDZaHZdKZ5yRx6vwJKVrHUN7LAIvvkxREsniX1pkvok3VNBO5H4JYSwvKraHOLQmHawmxFO7Yt%2BjoCsyWLQn5j8sus%2BKGjsblPY%2F52FMWsrq7zefKtn2G4Kh5oOSFvO0sUPc6%2FK%2FFGswjSAMcjcMNLjWTD%2F2ZajVx%2BxUiSl9m1MoY27AqGOJDtPN45RNViH3mEQoaJrMPtj2iIY1Sp5leB%2FJ91MGWUxEEh%2FUFCVJTw91ULawWJLltSXXLQm4dowfJCVxTqneYG39GHY2iMYYTadWoe9Iwow3zm3OQjdJeN4UyO112uZUZ4rUWYOfoCcxcCswWJmZz3piXvH2CEQ4EYn1H4jMRTVfcUo%2FIL3ZKQ0Ew3MLKPKCmmkagmNNQqPWQfqaKtcdPr5TwRr4Y2NZGcBZ8QiRCjW15FlloF4Em8M8fyfl2hh%2BlI2bKGHK6UQQlYQfnoatrxCznzOmYhMFqmoTZMyOcAJ28JZUsSkBiG95V0lqEWEs80VLP%2FgxjbyrGCK0bEeJZP%2BErEeGf1UOzfCOzltzGJUS55yIb7bqedU7Kinuxn0XXGvRQV1SyJM%2BIldg4HRSFHgWcVxd9m215NiTaY%2Faxd%2Fy2qXI8PM%2FL9D27lP8g3GG8btuYmptuf9ZtK1RvGwep7HGTTR4J5X8rp5IzV6WTZ2jTJeyVbVaPJLQO3tWqJqJDu0OOqesB4rMa7F%2BqbtqE5U96DyrVKm%2Bzpbe4xvM24nozrDqf4R%2BYSpYfkMAsp02ZyJlP8ay833Neru5G91eEO8l4LDIUZ9vT4mDEZ75jlWeGZDqNp2gONY6H947PbP1PxyA%2FAbuelPhRBHDbFCUzTNaGD0%2BHFKgzrlLjq0Y3vU5SmwteKqwtr3o81A401l2z4JdZc0uu3UTswDLXbidKDkuuSSA%2FB6l5NxhzVG8ZASz68UN90eyZj1tlkN24ayHRqIYD3ByFmNuE1L7CaBR5m26GjwG%2Bc3BK%2FIy9yPLUex5xsZl0Cy2GBxZ7sG1isXgLL5CiruO7AYl4bJlCDi20V94%2BIYv4OiL6azNfWD%2BrqQF9GdHuCssCIYOx%2F74xdr14cgJZYNh1qbQDOJTaItcGJZ7%2FLjicwLmQr3u0v9WVAvXBogKbcfkpnLvi8E5%2FtqXFtuEb5GatEDkyvHbtW6u4J3kYf4G0eJQW3%2F6rgCMng%2FdYGeV5FT7aMT2Jt4GoBHegbk1p90zB2NughU3uUHJ90jf9Porbd6%2FIV6RCp2kL9x4%2FjXyJxpuF0g3hbki%2FPSxpkHVf5yXmjN0NF8cyCTwyyVZo9Pb8Ytg%2BJOCAytE6KvcHXtBGOv%2BJfKH3kWLCEaUti1aMIMuTfsKG7xmAw%2BLjv6%2F0XNtlkkxNLjfWW07Lan7QRxl7SyHbzVNWRmUCTML6SCbRmkN%2BNArTu8uUHBoegAOezzZcFsAJQv1P%2FpDf9ZOxfqVuTg4JtPWUAI5FkPZF8AvcGRPmse6TkGftt3IhRGKfQE85SJR6qYsUT3pnSVBukcw42OA603Yiq109LnCS8QtVhTTBw2v29CMiFDLyBDJgqGWjjAtM2LuD0wQWAfRQuMOrO%2FKtcwC4LD83697TP3L2qf%2Fdc0lRLDRVpw%2F72jc8rp6CHkZNlFJcj668Byql2xtYZN4GyLcs%2B6QMni7TymUwRkck44YnR2Cu70KcLKnSggq2igjXsyQnbOk4uRTn%2FfsDWyYklTN6aG%2BnaNJuogw%2B0Ie341sVBHMk9qwDwgbnRBYdPEoc1dnZl7YnDvdAz4AyzjO1rUdq1HJ7s%2FXU3E7QfdOh7Y7pjSaolLcoMxcHfd3sLNoMPTM7nXbnEEnjmHwGUL5D4MiSa9pArVrstqaMN03qJGXpKYAYqawoT1bSEl4hD6%2BDONpom9CFyF17bCDiei%2BaL0ogNi7XYtduIGtJcteRHy2%2Fb1o0IejlcZ08aVryDDHLJfbyK0oZFBQzs8k8ZDeqmlKJickhcATN9DkXY97O41TZqfVhaO7J21fKTAG6LoQ9YR%2FHb6hdDcsSvfpUF3P8H)
+
+2 Design the API endpoints for the platform.
+
+Swagger: https://swaggerhub.com/apis/leandrocmaia/Heybeach/1.0.1
+
+3 Implement an Authentication and Authorization system for the platform (User registration and login).
+
+OK
+
+4 Implement the Entities
+
+OK
+
+5 Implement the API end point to upload a picture.
+
+OK
+
+6 Implement the API end point and cache (no libraries please, your own hand-rolled cache) for storing the hash tags of the pictures.
+
+OK
+
+7 Implement a CRUD Generic library to access the database
+
+doing
+
+## TODOS
+
+* Improve api response
+* Separate user auths in a separate microservice
+* Implement ACL layer with spring security annotations
+* Upload images to an external bucket (e.g Amazon S3)
+* Refactor using SOLID principles
+* Create CRUD library

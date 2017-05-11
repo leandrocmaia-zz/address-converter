@@ -1,11 +1,16 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import de.friday.domain.AddressToken;
 import de.friday.util.AddressTokenizer;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(classes = {AddressTokenizerTest.class})
 public class AddressTokenizerTest {
 
 	private AddressTokenizer addressTokenizer;
@@ -54,6 +59,14 @@ public class AddressTokenizerTest {
 		AddressToken token = addressTokenizer.parse(input);
 		assertEquals(token.getNumber(), "1");
 		assertEquals(token.getStreetName(), "Auf der Vogelwiese");
+	}
+	
+	@Test
+	public void testSimpleAddressLine6() {
+		String input = "200 Broadway Av";
+		AddressToken token = addressTokenizer.parse(input);
+		assertEquals(token.getNumber(), "200");
+		assertEquals(token.getStreetName(), "Broadway Av");
 	}
 	
 	

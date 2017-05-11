@@ -1,32 +1,48 @@
 package de.friday.util;
 
-import de.friday.domain.AddressToken;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Component;
 
+import de.friday.domain.AddressToken;
+import de.friday.domain.CountryFormat;
+
+@Component
 public class AddressTokenizer {
 
 	public AddressToken parse(String input) {
-		String[] tokens = input.split(" ");
-		AddressToken token = new AddressToken();
-		
-		// checks if last token starts with a numeric value
-		
-		String lastToken = tokens[tokens.length -1];
-		 
-		if (Character.isDigit(lastToken.charAt(0))) {
-			String rest = input.substring(0,input.indexOf(lastToken)).trim();
-			token.setStreetName(rest);
-			token.setNumber(lastToken);
-		} else if (Character.isLetter(lastToken.charAt(0))) { // in case 23 b
-			String number = tokens[tokens.length - 2] + " " + tokens[tokens.length - 1];
-			String rest = input.substring(0,input.indexOf(number)).trim();
-			token.setStreetName(rest);
-			token.setNumber(number);
-		} else {
-			token.setStreetName(tokens[0]);
-			token.setNumber(tokens[1]);
+		try {
+			String[] tokens = input.split(" ");
+			CountryFormat countryFormat = guessCountry(tokens);
+			AddressParser parser = (AddressParser) countryFormat.getTokenizer().newInstance();
+			return parser.parse(input);
+		} catch (InstantiationException | IllegalAccessException e) {
+			e.printStackTrace();
 		}
-		
-		return token;
+		return null;
+	}
+
+	private CountryFormat guessCountry(String[] tokens) {
+		CountryFormat format = new CountryFormat();
+
+		boolean startsWithNumberAndComma = tokens[0].contains(",");
+		boolean startsWithNumberAndNoComma = StringUtils.isNumeric(tokens[0]);
+		boolean endsWithNumeric = Character.isDigit(tokens[tokens.length - 1].charAt(0));
+		boolean endsWithLetter = Character.isLetter(tokens[tokens.length - 1].charAt(0));
+
+		if (startsWithNumberAndComma) {
+			format.setCountry("FR");
+			format.setFormat("%d, %s");
+		} else if (startsWithNumberAndNoComma) {
+			format.setCountry("US");
+			format.setFormat("%d %s");
+			format.setTokenizer(AddressUSParser.class);
+		} else if (endsWithNumeric || endsWithLetter) {
+			format.setCountry("DE");
+			format.setFormat("%s %d");
+			format.setTokenizer(AddressDeutschParser.class);
+		}
+
+		return format;
 	}
 
 }

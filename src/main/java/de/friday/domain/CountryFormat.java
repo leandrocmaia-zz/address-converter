@@ -3,9 +3,9 @@ package de.friday.domain;
 import lombok.Data;
 
 @Data
-public class AddressToken {
+public class CountryFormat {
 
-	private String streetName;
-	private String number;
 	private String country;
+	private String format;
+	private Class<?> tokenizer;
 }

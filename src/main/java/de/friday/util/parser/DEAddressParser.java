@@ -1,8 +1,9 @@
-package de.friday.util;
+package de.friday.util.parser;
 
 import de.friday.domain.AddressToken;
+import de.friday.util.AddressParser;
 
-public class AddressDeutschParser implements AddressParser {
+public class DEAddressParser implements AddressParser {
 	
 	@Override
 	public AddressToken parse(String input) {

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 
 import de.friday.domain.AddressToken;
 import de.friday.domain.CountryFormat;
+import de.friday.util.parser.DEAddressParser;
+import de.friday.util.parser.USAddressParser;
 
 @Component
 public class AddressTokenizer {
@@ -35,11 +37,11 @@ public class AddressTokenizer {
 		} else if (startsWithNumberAndNoComma) {
 			format.setCountry("US");
 			format.setFormat("%d %s");
-			format.setTokenizer(AddressUSParser.class);
+			format.setTokenizer(USAddressParser.class);
 		} else if (endsWithNumeric || endsWithLetter) {
 			format.setCountry("DE");
 			format.setFormat("%s %d");
-			format.setTokenizer(AddressDeutschParser.class);
+			format.setTokenizer(DEAddressParser.class);
 		}
 
 		return format;

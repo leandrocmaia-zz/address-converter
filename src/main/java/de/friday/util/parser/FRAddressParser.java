@@ -7,12 +7,10 @@ public class FRAddressParser implements AddressParser {
 	
 	@Override
 	public AddressToken parse(String input) {
-		String[] tokens = input.split(" ");		
-		AddressToken token = new AddressToken();		
-		String firstToken = tokens[0];		
-		String rest = input.substring(firstToken.length(), input.length()).trim();
-		token.setStreetName(rest);
-		token.setNumber(firstToken);
+		String[] tokens = input.split(", ");		
+		AddressToken token = new AddressToken();
+		token.setStreetName(tokens[1]);
+		token.setNumber(tokens[0]);
 		return token;
 	}
 

@@ -62,12 +62,27 @@ public class AddressTokenizerTest {
 	}
 	
 	@Test
-	public void testSimpleAddressLine6() {
+	public void testSimpleAddressLineUS() {
 		String input = "200 Broadway Av";
 		AddressToken token = addressTokenizer.parse(input);
 		assertEquals(token.getNumber(), "200");
 		assertEquals(token.getStreetName(), "Broadway Av");
 	}
 	
+	@Test
+	public void testSimpleAddressLineFR() {
+		String input = "4, rue de la revolution";
+		AddressToken token = addressTokenizer.parse(input);
+		assertEquals(token.getNumber(), "4");
+		assertEquals(token.getStreetName(), "rue de la revolution");
+	}
+	
+	@Test
+	public void testSimpleAddressLineES() {
+		String input = "Calle Aduana, 29";
+		AddressToken token = addressTokenizer.parse(input);
+		assertEquals(token.getNumber(), "29");
+		assertEquals(token.getStreetName(), "Calle Aduana");
+	}
 	
 }
